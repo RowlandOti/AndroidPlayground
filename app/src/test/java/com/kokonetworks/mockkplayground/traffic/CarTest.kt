@@ -25,7 +25,7 @@ class CarTest {
         val distance = car1.drive(direction)
 
         // then
-        Assert.assertEquals(expectedDistance, distance /2)
+        Assert.assertEquals(expectedDistance, distance)
     }
 
     @Test
@@ -47,7 +47,7 @@ class CarTest {
         // when
         car1.drive(direction2)
         //then
-        Assert.assertEquals(direction2.cost*1.5, slot.captured)
+        Assert.assertEquals(direction2.cost, slot.captured)
     }
 
     @Test
@@ -69,6 +69,6 @@ class CarTest {
         //then
         Assert.assertEquals(direction1.cost, list[0])
         // and then
-        Assert.assertEquals(direction2.cost*1.5, list[1])
+        Assert.assertEquals(direction2.cost, list[1])
     }
 }

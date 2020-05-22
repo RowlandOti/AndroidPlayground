@@ -35,7 +35,7 @@ class TrafficSystemTest {
     // Automatically matches dependencies wby names i.e car1 == trafficSystem.car1 - and so on
     // Matches properties by trying in the following order - name, class then superclass
     //@InjectMockKs(overrideValues = true) // set even already initialized fields
-    @InjectMockKs()
+    @InjectMockKs(overrideValues = true)
     var trafficSystem = TrafficSystem()
 
     @Before
@@ -44,7 +44,7 @@ class TrafficSystemTest {
     @Test
     fun drive_one_car_mockked() {
         val direction = Direction.NORTH()
-        //every { car1.drive(any<Direction>()) } returns direction.cost
+        every { car1.drive(any<Direction>()) } returns direction.cost
         trafficSystem.drive(trafficSystem.car1, direction)
         verify { car1.drive(direction) }
     }
@@ -80,7 +80,7 @@ class TrafficSystemTest {
         trafficSystem.drive(car2, direction2)
 
         verify { car2.drive(direction1)
-            //car2.drive(direction2)
+            car2.drive(direction2)
         }
 
         // To double check that all method calls on mock were verified by verify
@@ -95,8 +95,9 @@ class TrafficSystemTest {
         val direction2 = Direction.SOUTH()
         trafficSystem.drive(car2, direction2)
 
-        verifyAll { //car2.drive(direction1)
+        verifyAll {
             car2.drive(direction2)
+            car2.drive(direction1)
         }
     }
 
@@ -111,7 +112,7 @@ class TrafficSystemTest {
         val direction3 = Direction.EAST()
         trafficSystem.drive(car2, direction3)
 
-        verifyOrder { car3.drive(direction2)
+        verifyOrder { car2.drive(direction1)
             car2.drive(direction3)
         }
     }
@@ -124,8 +125,8 @@ class TrafficSystemTest {
         val direction2 = Direction.NORTH()
         trafficSystem.drive(car2, direction2)
 
-        verifySequence { car2.drive(direction2)
-            car2.drive(direction1)
+        verifySequence { car2.drive(direction1)
+            car2.drive(direction2)
         }
     }
 
@@ -135,7 +136,7 @@ class TrafficSystemTest {
         val direction1 = Direction.NORTH()
         trafficSystem.drive(car2, direction1, timeout)
 
-        verify (timeout = 2500){ car2.drive(direction1) }
+        verify (timeout = 3010){ car2.drive(direction1) }
     }
 
 

@@ -25,8 +25,7 @@ class TrafficSystem {
         }
     }
 
-    fun drive(car: Car, direction: Direction,
-              timeOutMs: Long) {
+    fun drive(car: Car, direction: Direction, timeOutMs: Long) {
 
         Thread{
             Thread.sleep(timeOutMs)
