@@ -1,29 +1,26 @@
-# README #
-
-This README would normally document whatever steps are necessary to get your application up and running.
-
 ### What is this repository for? ###
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+* Repository contains code samples used for training and talks by the Android team
+* Each project module covers a different topic
 
 ### How do I get set up? ###
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+* Git clone the repository on git terminal
+* Identify the module you are interested in
+* Open the module you are interested in Android Studio
+* Have fun exploring the code
+* Gain an understanding
+* Create PR for improvements
 
 ### Contribution guidelines ###
 
-* Writing tests
-* Code review
+* Add new module for new topic
+* Modify existing module for related topic or change requests
+* Write tests whenever possible
+* Each module should have a README.md file explaining the module contents
+* Code review will be as per KOKO guidelines
 * Other guidelines
 
 ### Who do I talk to? ###
 
-* Repo owner or admin
-* Other community or team contact
+* Peers
