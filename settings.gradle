@@ -1,2 +1,2 @@
-include ':app'
-rootProject.name='MockKPlayground'
+include ':MockKPlayground'
+rootProject.name='AndroidPlayground'
